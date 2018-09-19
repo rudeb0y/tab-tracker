@@ -13,7 +13,7 @@
     -->
       <v-spacer></v-spacer>
 
-      <v-toolbar-items>
+      <v-toolbar-items v-if="!$store.state.isUserLoggedIn">
         <v-btn to="register" flat dark>
           Sign Up
         </v-btn>
