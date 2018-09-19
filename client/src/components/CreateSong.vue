@@ -69,6 +69,7 @@
             <v-btn
               class="indigo" dark
               @click="createSong"
+              to="/songs"
             >Create Song
             </v-btn>
           </v-container>
@@ -110,7 +111,7 @@ export default {
   methods: {
     async createSong() {
       try {
-        await SongsService.post();
+        await SongsService.post(this.song);
         this.song = null;
       } catch (error) {
         this.error = error.response.data.error;

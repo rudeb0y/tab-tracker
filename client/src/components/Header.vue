@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar color="indigo" dark fixed app>
+  <v-toolbar class="indigo" dark fixed app>
 
   <router-link to="/" tag="v-toolbar-title" id="toolbar">
         TabTracker
@@ -13,6 +13,13 @@
         >
           Browse
         </v-btn>
+         <v-btn
+          to="/songs/create"
+          flat
+          dark
+        >
+          Create Song
+        </v-btn>
       </v-toolbar-items>
 
       <v-spacer></v-spacer>
@@ -21,14 +28,12 @@
         <v-btn v-if="!$store.state.isUserLoggedIn"
           to="/register"
           flat
-          dark
         >
           Sign Up
         </v-btn>
          <v-btn v-if="!$store.state.isUserLoggedIn"
           to="/login"
           flat
-          dark
         >
           Login
         </v-btn>
@@ -36,7 +41,6 @@
           @click="logOut"
           to="/"
           flat
-          dark
         >
           Log Out
         </v-btn>

@@ -23,11 +23,11 @@
         ></v-text-field></v-flex>
         </form>
         <br>
-        <div class="red darken-4" v-html="error" />
+         <v-container v-html="error" class="red lighten-4" v-if="error" />
         <br>
         <v-btn class="indigo" dark @click="register">Register</v-btn>
        </v-container>
-       </app-panel>
+    </app-panel>
   </v-layout>
 </template>
 
@@ -44,7 +44,7 @@ export default {
     return {
       email: '',
       password: '',
-      error: null
+      error: null,
     };
   },
   methods: {

@@ -3,7 +3,7 @@
     <app-panel title="Login">
 
     <v-container slot="content">
-          <form>
+       <form>
         <v-flex><v-text-field
           label="Email"
           v-model="email"
@@ -15,10 +15,13 @@
           type="password"
         ></v-text-field></v-flex>
       </form>
-        <br>
-        <div class="red darken-4" v-html="error" />
-        <br>
-        <v-btn class="indigo" dark @click="login">Login</v-btn>
+      <br>
+      <v-container v-html="error" class="red lighten-4" v-if="error" />
+      <br>
+      <v-btn class="indigo" dark
+        @click="login"
+      >Login
+      </v-btn>
     </v-container>
     </app-panel>
   </v-layout>
@@ -51,6 +54,7 @@ export default {
         this.$store.dispatch('setToken', response.data.token);
         this.$store.dispatch('setUser', response.data.user);
         this.error = null;
+        this.$router.push({ name: 'home' });
       } catch (error) {
         this.error = error.response.data.error;
       }
