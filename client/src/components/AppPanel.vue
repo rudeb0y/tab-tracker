@@ -4,7 +4,6 @@
         <v-toolbar flat dense class="indigo" dark>
           <v-toolbar-title>{{title}}</v-toolbar-title>
 
-
             <slot name="toolbar-left">
             </slot>
 
@@ -17,6 +16,7 @@
 
         <slot name="content">
           No content.
+
         </slot>
       </v-card>
     </v-flex>
@@ -29,7 +29,7 @@ export default {
   props: [
     'title',
   ],
-}
+};
 </script>
 
 <style scoped>
