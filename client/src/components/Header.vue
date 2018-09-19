@@ -7,7 +7,7 @@
 
       <v-toolbar-items>
         <v-btn
-          to="songs"
+          to="/songs"
           flat
           dark
         >
@@ -19,14 +19,14 @@
 
       <v-toolbar-items>
         <v-btn v-if="!$store.state.isUserLoggedIn"
-          to="register"
+          to="/register"
           flat
           dark
         >
           Sign Up
         </v-btn>
          <v-btn v-if="!$store.state.isUserLoggedIn"
-          to="login"
+          to="/login"
           flat
           dark
         >
@@ -64,25 +64,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 
 #toolbar {
   cursor: pointer;
-      transition: .3s cubic-bezier(.25,.8,.5,1);
 }
-
 
 </style>
