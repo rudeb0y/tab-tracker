@@ -6,7 +6,8 @@
           <v-toolbar-title>Register</v-toolbar-title>
         </v-toolbar>
        <div class="pl-4 pr-4 pt-2 pb-2">
-        <v-flex><v-text-field
+        <form>
+          <v-flex><v-text-field
           label="Email"
           v-model="email"
         ></v-text-field></v-flex>
@@ -14,7 +15,9 @@
         <v-flex><v-text-field
           label="Password"
           v-model="password"
+          type="password"
         ></v-text-field></v-flex>
+        </form>
         <br>
         <div class="red darken-4" v-html="error" />
         <br>
@@ -44,6 +47,8 @@ export default {
           email: this.email,
           password: this.password,
         });
+
+        this.error = null;
       } catch (error) {
         this.error = error.response.data.error;
       }

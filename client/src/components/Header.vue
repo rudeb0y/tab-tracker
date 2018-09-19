@@ -1,9 +1,9 @@
 <template>
   <v-toolbar color="indigo" dark fixed app>
 
-  <v-toolbar-title >
+  <router-link to="/" tag="v-toolbar-title" id="toolbar">
         TabTracker
-      </v-toolbar-title>
+      </router-link>
       <!-- TODO - implement me -->
       <!-- <v-toolbar-items>
         <v-btn flat dark>
@@ -52,5 +52,11 @@ li {
 a {
   color: #42b983;
 }
+
+#toolbar {
+  cursor: pointer;
+      transition: .3s cubic-bezier(.25,.8,.5,1);
+}
+
 
 </style>
