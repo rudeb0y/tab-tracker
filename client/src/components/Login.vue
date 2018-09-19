@@ -1,12 +1,9 @@
 <template>
   <v-layout column>
-    <v-flex xs12 sm6>
-      <div class="white elevation-2">
-        <v-toolbar flat dense class="indigo" dark>
-          <v-toolbar-title>Login</v-toolbar-title>
-        </v-toolbar>
-       <div class="pl-4 pr-4 pt-2 pb-2">
-        <form>
+    <app-panel title="Login">
+
+    <v-container slot="content">
+          <form>
         <v-flex><v-text-field
           label="Email"
           v-model="email"
@@ -22,17 +19,20 @@
         <div class="red darken-4" v-html="error" />
         <br>
         <v-btn class="indigo" dark @click="login">Login</v-btn>
-       </div>
-      </div>
-    </v-flex>
+    </v-container>
+    </app-panel>
   </v-layout>
 </template>
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService';
+import AppPanel from '@/components/AppPanel.vue'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Login',
+  components: {
+    AppPanel,
+  },
   data() {
     return {
       email: '',
